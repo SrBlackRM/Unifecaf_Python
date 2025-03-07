@@ -28,7 +28,7 @@ class FormData{
         email: "",
         pass: ""
     }
-    *-
+
     constructor(){
         this.formulario = document.getElementById('register');
         this.eventos();
@@ -65,6 +65,3 @@ class FormData{
         });
     }
 }
- 
-
-let valida = new FormData()
