@@ -10,10 +10,11 @@ def index():
 def register():
     error = None
     if request.method == "POST":
-        if valid_register(request.json['nome'],
-                          request.json['email'],
-                          request.json['pass']):
-            return None;
+        print(str(request.data))
     return render_template('register.html')
+
+@app.route('/listUser')
+def listUser():
+    return render_template('list_user.html')
 
 app.run()

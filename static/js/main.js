@@ -20,6 +20,15 @@ buttonRegister.addEventListener('mouseout', ()=>{
 })
 
 class FormData{
+
+    formUrl = "register"
+
+    data = {
+        nome: "",
+        email: "",
+        pass: ""
+    }
+    *-
     constructor(){
         this.formulario = document.getElementById('register');
         this.eventos();
@@ -37,13 +46,23 @@ class FormData{
     }
 
     getData(e){
-        let data = {
+        this.data = {
             nome: e.srcElement[0].value,
             email: e.srcElement[1].value,
             pass: e.srcElement[2].value
         }
 
-        console.log(data)
+        this.sendData(this.data);
+    }
+
+    sendData(data){
+        fetch(this.formUrl, {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8"
+            }
+        });
     }
 }
  
