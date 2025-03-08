@@ -8,7 +8,10 @@ class registerData():
     def __init__(self, nome, email, password):
         self.nome = nome
         self.email = email
-        self.password = md5_string(password)
+        self.password = password
+    
+    def crypto_password(self, password):
+        return md5_string(password)
 
 # ROTAS
 @app.route('/')
@@ -40,7 +43,7 @@ def listUser():
 # QUERIES
 def sendRegisterDataToDB(data):
     sql = f"INSERT INTO alunoslogin (nome, email, senha) VALUES (%s, %s, %s)"
-    val = (data.nome, data.email, data.password)
+    val = (data.nome, data.email, data.crypto_password(data.password))
     mycursor.execute(sql, val)
     mydb.commit()
 
