@@ -50,13 +50,28 @@ class FormData{
     }
 
     sendData(){
-        fetch(this.formUrl, {
-            method: "POST",
-            body: JSON.stringify(this.data),
-            headers: {
-                "Content-Type": "application/json; charset=UTF-8"
-            }
-        });
+        try{
+            fetch(this.formUrl, {
+                method: "POST",
+                body: JSON.stringify(this.data),
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8"
+                }
+            });
+            alert("Usuario registrado com sucesso!")
+            this.clearData()
+        }catch{
+            alert("Falha ao enviar as informações")
+            this.clearData()
+        }
+        
+    }
+
+    clearData(){
+        let inputs = document.getElementsByTagName('input')
+        for(let i = 0; i < inputs.length; i++){
+            inputs[i].value = ''
+        }
     }
 }
 
