@@ -1,19 +1,13 @@
 let buttonRegister = document.getElementById('button-register')
 
 
-buttonRegister.addEventListener('click', ()=>{
-    console.log('funcionando!!')
-})
-
 buttonRegister.addEventListener('mouseover', ()=>{
-    console.log('cor')
     buttonRegister.style.backgroundColor = "#A1E3F9"
     buttonRegister.style.color = "black"
     buttonRegister.style.cursor = "pointer"
 })
 
-buttonRegister.addEventListener('mouseout', ()=>{
-    console.log('cor')
+buttonRegister.addEventListener('mouseout', ()=>{W
     buttonRegister.style.backgroundColor = "#6b0080"
     buttonRegister.style.color = "white"
     buttonRegister.style.cursor = "default"
@@ -52,16 +46,18 @@ class FormData{
             pass: e.srcElement[2].value
         }
 
-        this.sendData(this.data);
+        this.sendData();
     }
 
-    sendData(data){
+    sendData(){
         fetch(this.formUrl, {
             method: "POST",
-            body: JSON.stringify(data),
+            body: JSON.stringify(this.data),
             headers: {
                 "Content-Type": "application/json; charset=UTF-8"
             }
         });
     }
 }
+
+new FormData();

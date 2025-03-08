@@ -16,11 +16,12 @@ def index():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     error = None
+    print(request.method)
     if request.method == "POST":
         data = request.json
         # sendToDB(data)
-        print(f'nome: {data['nome']}\nemail: {data['email']}\npassword: {data['password']}')
-    return render_template('register.html')
+        print(f'nome: {data['nome']}\nemail: {data['email']}\npassword: {data['pass']}')
+    return render_template('register.html', faculdade='FECAF')
 
 @app.route('/listUser')
 def listUser():
