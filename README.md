@@ -9,8 +9,8 @@
     importante lembrar que é preciso ter o mysql já instalado 
 
 4 - para configurar o .env, precisa ter as seguintes variáveis  
-        * DOMINIO = "127.0.0.1"
-        * PORTA = "3306"
-        * DATABASE = "seu banco de dados aqui"
-        * USUARIO = "seu usuario do banco aqui"
-        * SENHA = "sua senha do banco aqui"
+        * DOMINIO = "127.0.0.1"  
+        * PORTA = "3306"  
+        * DATABASE = "seu banco de dados aqui"  
+        * USUARIO = "seu usuario do banco aqui"  
+        * SENHA = "sua senha do banco aqui"  
