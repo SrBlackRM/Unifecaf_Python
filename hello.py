@@ -30,7 +30,7 @@ def register():
     return render_template('register.html', faculdade='FECAF')
 
 
-@app.route('/listUser')
+@app.route('/list')
 def listUser():
     lista_alunos = []
     lista_alunos_do_db = getUsersFromDB()
@@ -39,6 +39,9 @@ def listUser():
         lista_alunos.append(aluno_formated)
     return render_template('list_user.html', faculdade='FECAF', alunos=lista_alunos)
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    return render_template('login.html', faculdade='FECAF')
 
 # QUERIES
 def sendRegisterDataToDB(data):
