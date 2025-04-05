@@ -1,30 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
     <link rel="stylesheet" href="../static/css/login.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
 </head>
-<body>
-    <main id="container">
-        <section id="right-side">
-            <h1 id="title-right-side">Faça login na {{ faculdade }}</h1>
-        </section>
-        <section id="login-container">
-            <h2 id="titulo">LOGIN</h2>
-            <div class="inputs">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="input_email">
+<body class="bg-dark">
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" required>
             </div>
-            
-            <div class="inputs">
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" id="input_senha">
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
             </div>
-
-            <button type="submit">LOGIN</button>
-        </section>
-    </main>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
 </body>
 </html>

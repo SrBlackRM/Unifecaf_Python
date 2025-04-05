@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/register.css">
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
     <script src="../static/js/main.js" defer></script>
     <title>Registro</title>
 </head>
-<body>
+<body class="bg-dark">
     <form id="register">
-        <div id="container-register">
+        <div id="register-container" class="d-flex flex-column gap-10">
             <h2> Cadastro de Alunos - {{ faculdade }}</h2>
-            <p class="input-p-register">
+            <div class="input-p-register d-flex flex-column align-items-center mt-3">
                 <label for="nome_register">Seu nome</label>
                 <input id="nome_register" name="nome_register" required="required" type="text"/>
-            </p>
-            <p class="input-p-register">
+            </div>
+            <div class="input-p-register d-flex flex-column align-items-center mt-3">
                 <label for="email_register">Email</label>
                 <input id="email_register" name="email_register" required="required" type="email"/>
-            </p>
-            <p class="input-p-register">
+            </div>
+            <div class="input-p-register d-flex flex-column align-items-center mt-3">
                 <label for="pass_register">Senha</label>
                 <input id="pass_register" name="pass_register" required="required" type="password"/>
-            </p>
-            <div>
+            </div>
+            <div class="mt-5">
                 <p>Bem vindo</p>
                 <button id="button-register">Registrar</button>
             </div>

@@ -58,10 +58,9 @@ class FormData{
                     "Content-Type": "application/json; charset=UTF-8"
                 }
             });
-            alert("Usuario registrado com sucesso!")
-            this.clearData()
+            
+            window.location.href = '/list'
         }catch{
-            alert("Falha ao enviar as informações")
             this.clearData()
         }
         

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from connection import mydb, mycursor
 import hashlib
 
@@ -27,6 +27,7 @@ def register():
         print(f'nome: {data['nome']}\nemail: {data['email']}\nsenha: {data['pass']}')
         data = registerData(data['nome'], data['email'], data['pass'])
         sendRegisterDataToDB(data)
+        return redirect(location='/list', code="302")
     return render_template('register.html', faculdade='FECAF')
 
 
@@ -41,6 +42,8 @@ def listUser():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == "POST":
+        sql = f"SELECT * FROM alunoslogin WHERE email = {email}"
     return render_template('login.html', faculdade='FECAF')
 
 # QUERIES
